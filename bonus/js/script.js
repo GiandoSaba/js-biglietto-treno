@@ -2,7 +2,7 @@
 const eta = parseInt(prompt('Indica la tua età'));
 const chilometri = parseInt(prompt('Indica quanti chilometri vuoi percorrere'));
 
-if (!(isNaN(eta)) && !(isNaN(chilometri))) {
+if (!(isNaN(eta)) && !(isNaN(chilometri)) && eta != '' && chilometri != '') {
 
     console.log('Età passeggero: ' + eta);
     console.log('Km passeggero: ' + chilometri);
@@ -43,7 +43,10 @@ if (!(isNaN(eta)) && !(isNaN(chilometri))) {
     
     console.log('Prezzo biglietto: ' + prezzo.toFixed(2));
     document.writeln('Prezzo biglietto: ' + prezzo.toFixed(2));
-} else {
-    console.log('Hai inserito dei valori non numerici');
-    document.writeln('Hai inserito dei valori non numerici');
+} else if (eta == '' || isNaN(eta)) {
+    console.log("Non hai inserito un'età corretta o hai lasciato il campo vuoto.");
+    document.writeln("Non hai inserito un'età corretta o hai lasciato il campo vuoto.");
+} else if (chilometri == '' || isNaN(chilometri)) {
+    console.log("Non hai inserito i chilometri correttamente o hai lasciato il campo vuoto.");
+    document.writeln("Non hai inserito i chilometri correttamente  o hai lasciato il campo vuoto.");
 }
